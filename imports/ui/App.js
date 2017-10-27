@@ -534,6 +534,13 @@ class App extends React.Component {
             Login
             </span>
           </button>
+          <button
+            className="btn btn-lg btn-primary btn-block ladda-button"
+            onClick={ this.socketTest }>
+            <span className="ladda-label">
+            Test
+            </span>
+          </button>
           <input
             type="text"
             className="form-control margin-top-20 margin-bottom-20"
