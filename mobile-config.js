@@ -23,6 +23,7 @@ App.icons({
 });
 
 App.accessRule('*');
+
 /*App.launchScreens({
   'iphone_2x': 'splash/Default@2x~iphone.png',
   'iphone5': 'splash/Default~iphone5.png',

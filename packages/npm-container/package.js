@@ -7,6 +7,10 @@ Package.describe({
   name: 'npm-container'
 });
 
+Cordova.depends({
+  'cz.blocshop.socketsforcordova': '1.1.0'
+});
+
 var packagesJsonFile = path.resolve('./packages.json');
 try {
   var fileContent = fs.readFileSync(packagesJsonFile);

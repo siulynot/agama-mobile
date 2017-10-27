@@ -36,6 +36,38 @@ class App extends React.Component {
     this.changeSendCoinStep = this.changeSendCoinStep.bind(this);
     this.toggleSend = this.toggleSend.bind(this);
     this.dashboardRefresh = this.dashboardRefresh.bind(this);
+    this.socketTest = this.socketTest.bind(this);
+  }
+
+  socketTest() {
+    const content = JSON.stringify({
+      jsonrpc : '2.0',
+      method: 'blockchain.transaction.broadcast',
+      params: [],
+      id: 1,
+    });
+
+    var socket = new Socket();
+
+    socket.open(
+    '173.212.225.176',
+    50011,
+    function() {
+      // invoked after successful opening of socket
+    },
+    function(errorMessage) {
+      // invoked after unsuccessful opening of socket
+    });
+
+    socket.onData = function(data) {
+      // invoked after new batch of data is received (typed array of bytes Uint8Array)
+      this.setState({
+        errors: JSON.stringify(data),
+      });
+    };
+
+    socket.write(`${content}\n`);
+    socket.close();
   }
 
   componentDidMount() {
