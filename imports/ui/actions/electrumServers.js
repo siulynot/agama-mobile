@@ -1,13 +1,13 @@
 export let electrumServers = {
  coqui: { // !estimatefee
     ip: '78.47.146.222',
-    port: 14277,
+    port: 10011,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'COQUI',
     serverList: [
-      '94.130.173.120:14277',
-      '78,47.146.222:14277'
+      '94.130.173.120:10011',
+      '78.47.146.222:10011'
     ],
   },   
 
